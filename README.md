@@ -22,3 +22,7 @@
     $ npm install
     $ nodemon --exec babel-node app.js
 
+
+### 查看文档
+
+    http://localhost:3000/apidoc
