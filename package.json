@@ -4,7 +4,14 @@
   "description": "node rest api demo",
   "main": "app.js",
   "scripts": {
-    "start": "babel-node app.js"
+    "start": "npm run apidoc && nodemon --exec babel-node app.js",
+    "apidoc": "apidoc -i routes/ -o public/apidoc"
+  },
+  "apidoc": {
+    "name": "Node REST API - Documentation",
+    "template": {
+      "forceLanguage": "en"
+    }
   },
   "author": "dongtong",
   "dependencies": {
@@ -24,6 +31,7 @@
     "sequelize-cli": "^2.4.0"
   },
   "devDependencies": {
+    "apidoc": "^0.16.1",
     "nodemon": "^1.9.1"
   }
 }

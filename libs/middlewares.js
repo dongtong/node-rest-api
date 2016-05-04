@@ -2,7 +2,7 @@
 
 import bodyParser from "body-parser";
 import passport from 'passport';
-
+import express from 'express';
 
 module.exports = app => {
 	app.set('port', 3000);
@@ -20,7 +20,6 @@ module.exports = app => {
 	  	done(null, user);
 	});
 
-
 	app.use((req, res, next) => {
 		//req.body.id could overwrite the id of a user,
 		//on each request functions, we are going to use req.body as a parameter for Sequelize.js functions, 
@@ -29,4 +28,5 @@ module.exports = app => {
 		// it can execute the next function on the route or the next middleware below
 		next();
 	});
+	app.use(express.static("public"));
 };
