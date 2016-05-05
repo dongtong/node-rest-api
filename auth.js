@@ -30,7 +30,7 @@ module.exports = app => {
 			let userInfo = user.getInfo(),
 			    role = userInfo.role;
 
-		    if(user && (role === 'ADMIN') {
+		    if(user && (role === 'ADMIN')) {
 		     	return done(null, {
 		     		id: user.id,
 		     		mobile: user.mobile,

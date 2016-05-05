@@ -13,6 +13,32 @@ module.exports = app => {
 	const UsersRole = app.db.models.users_role;
 
 	// 查找所有用户
+	/**
+	 * @api {get} /user/page/:page Search related users
+	 * @apiGroup User
+	 * @apiHeader {String} Authorization Token of authenticated user
+	 * @apiParam {String} q User attributes
+	 * @apiHeaderExample {json} Header
+	 *     {"Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTc1NX0.3EUzoJzlR5K6733EtakdI_I0ncKoNAr2x1wxHqorgtY"}
+	 * @apiSuccess {String} code Return stataus
+	 * @apiSuccess {String} totalPage Result page number
+	 * @apiSuccess {String} totalCount Result count
+	 * @apiSuccess {Array} users Return users
+	 * @apiSuccessExample {json} Success
+	 *     HTTP/1.1 200 OK
+	 *     {
+     *         "code": "0",
+     *         "totalPage": 204,
+     *         "totalCount": 2034,
+     *         "users": [{...}]
+     *      }
+     *  @apiErrorExample {json} Search error
+     *     HTTP/1.1 200 OK
+	 *     {
+	 *         "code": "1000",
+	 *         "msg": "系统维护中"
+	 *     }
+	 */
 	app.route("/users/page/:page")
 	   .all(app.auth.authenticate())
 	   .get((req, res) => {
