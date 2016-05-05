@@ -30,6 +30,7 @@
 或者因为本地没有数据库，那么可以先安装httpster
 
     $ npm install httpster -g
+    $ httpster
 
 然后访问
 
