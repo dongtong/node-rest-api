@@ -26,3 +26,13 @@
 ### 查看文档
 
     http://localhost:3000/apidoc
+
+或者因为本地没有数据库，那么可以先安装httpster
+
+    $ npm install httpster -g
+
+然后访问
+
+    http://localhost:3333/public/apidoc
+
+即可访问API文档说明
